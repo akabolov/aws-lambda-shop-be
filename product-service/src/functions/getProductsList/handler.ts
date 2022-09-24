@@ -3,13 +3,18 @@
 import { formatJSONResponse } from "@libs/api-gateway";
 import { middyfy } from "@libs/lambda";
 import { APIGatewayEvent } from "aws-lambda";
+import mockData from "src/mockData";
 
 // const hello: ValidatedEventAPIGatewayProxyEvent<typeof schema> = async (
-const getProductList = async (event: APIGatewayEvent) => {
-  return formatJSONResponse({
-    message: `Hello world, welcome to the exciting Serverless world!`,
-    event,
-  });
+const getProductsList = async (event: APIGatewayEvent) => {
+  try {
+    const data = await mockData();
+    return formatJSONResponse({
+      data,
+    });
+  } catch (error) {
+    console.log(error);
+  }
 };
 
-export const main = middyfy(getProductList);
+export const main = middyfy(getProductsList);
