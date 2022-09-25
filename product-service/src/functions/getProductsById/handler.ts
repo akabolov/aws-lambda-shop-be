@@ -3,7 +3,7 @@ import { middyfy } from "@libs/lambda";
 import { APIGatewayEvent } from "aws-lambda";
 import mockData from "src/mockData";
 
-const getProductsList = async (event: APIGatewayEvent) => {
+export const getProductsById = async (event: APIGatewayEvent) => {
   try {
     const { id } = event.pathParameters;
     const item = ((await mockData()) as { id: string }[]).find((piece) => {
@@ -19,4 +19,4 @@ const getProductsList = async (event: APIGatewayEvent) => {
   }
 };
 
-export const main = middyfy(getProductsList);
+export const main = middyfy(getProductsById);

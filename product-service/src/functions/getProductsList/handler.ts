@@ -2,11 +2,10 @@
 // import schema from "./schema";
 import { formatJSONResponse } from "@libs/api-gateway";
 import { middyfy } from "@libs/lambda";
-import { APIGatewayEvent } from "aws-lambda";
 import mockData from "src/mockData";
 
 // const hello: ValidatedEventAPIGatewayProxyEvent<typeof schema> = async (
-const getProductsList = async (event: APIGatewayEvent) => {
+export const getProductsList = async () => {
   try {
     const data = await mockData();
     return formatJSONResponse({
