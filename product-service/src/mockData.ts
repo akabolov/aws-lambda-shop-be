@@ -25,7 +25,7 @@ export default () =>
       {
         description:
           "Girl with a Pearl Earring is an oil painting by Dutch Golden Age painter Johannes Vermeer, dated c. 1665.",
-        id: "7567ec4b-b10c-48c5-9345-fc73348a80a1",
+        id: "1",
         price: 15,
         title: "Girl with a Pearl Earring",
       },
